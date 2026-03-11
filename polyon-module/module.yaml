@@ -52,6 +52,7 @@ spec:
   # PolyON PRC → n8n ENV 매핑
   env:
     # Database (PostgreSQL)
+    DATABASE_URL: "postgres://{{ claims.database.user }}:{{ claims.database.password }}@{{ claims.database.host }}:{{ claims.database.port }}/{{ claims.database.database }}"
     DB_TYPE: "postgresdb"
     DB_POSTGRESDB_HOST: "{{ claims.database.host }}"
     DB_POSTGRESDB_PORT: "{{ claims.database.port }}"
@@ -60,6 +61,10 @@ spec:
     DB_POSTGRESDB_PASSWORD: "{{ claims.database.password }}"
 
     # Binary / Execution Storage → RustFS (S3) — n8n 공식 env 이름 사용
+    S3_ENDPOINT: "{{ claims.objectStorage.endpoint }}"
+    S3_BUCKET: "{{ claims.objectStorage.bucket }}"
+    S3_ACCESS_KEY: "{{ claims.objectStorage.accessKey }}"
+    S3_SECRET_KEY: "{{ claims.objectStorage.secretKey }}"
     N8N_DEFAULT_BINARY_DATA_MODE: "s3"
     N8N_EXECUTION_DATA_STORAGE_MODE: "database"
     N8N_EXTERNAL_STORAGE_S3_HOST: "{{ claims.objectStorage.host }}"
@@ -70,6 +75,10 @@ spec:
     N8N_EXTERNAL_STORAGE_S3_ACCESS_SECRET: "{{ claims.objectStorage.secretKey }}"
 
     # SMTP (초대/알림 메일)
+    SMTP_HOST: "{{ claims.smtp.host }}"
+    SMTP_PORT: "{{ claims.smtp.port }}"
+    SMTP_USER: "{{ claims.smtp.user }}"
+    SMTP_PASSWORD: "{{ claims.smtp.password }}"
     N8N_SMTP_HOST: "{{ claims.smtp.host }}"
     N8N_SMTP_PORT: "{{ claims.smtp.port }}"
     N8N_SMTP_USER: "{{ claims.smtp.user }}"
@@ -81,7 +90,7 @@ spec:
     N8N_SSO_REDIRECT_LOGIN_TO_SSO: "true"
     N8N_SSO_OIDC_LOGIN_ENABLED: "true"
     N8N_SSO_SAML_LOGIN_ENABLED: "false"
-    N8N_SSO_LDAP_LOGIN_ENABLED: "false"
+    N8N_SSO_LDAP_LOGIN_ENABLED: "true"
 
     # PolyON-auth(=Keycloak) — 초기 OIDC 설정은 DB 저장이므로, entrypoint/init에서 이 env로 DB에 주입 필요
     N8N_OIDC_DISCOVERY_URL: "{{ claims.auth.discoveryEndpoint }}"
