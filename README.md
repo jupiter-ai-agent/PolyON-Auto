@@ -1,11 +1,11 @@
 ![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
 
-# PolyON-n8n
+# PolyON-Auto
 
 **n8n**을 [PolyON Platform](https://github.com/jupiter-ai-agent/PolyON-platform) 모듈로 동작하도록 구성한 저장소입니다.  
 업스트림: [n8n-io/n8n](https://github.com/n8n-io/n8n).
 
-**저장소 운영 방식**: [PolyON-Odoo](https://github.com/jupiter-ai-agent/PolyON-Odoo)와 동일하게 **n8n 원본 소스는 포함하지 않습니다**. Dockerfile은 공식 n8n 이미지를 베이스로 하고, 본 저장소에는 PolyON용 래퍼(Dockerfile, entrypoint, polyon-module, scripts)만 두어 원본 터치 없이 업스트림 갱신을 유지합니다.
+**저장소 운영 방식**: [PolyON-AppEngine](https://github.com/jupiter-ai-agent/PolyON-AppEngine)과 동일하게 **n8n 원본 소스는 포함하지 않습니다**. Dockerfile은 공식 n8n 이미지를 베이스로 하고, 본 저장소에는 PolyON용 래퍼(Dockerfile, entrypoint, polyon-module, scripts)만 두어 원본 터치 없이 업스트림 갱신을 유지합니다.
 
 ## PolyON 모듈로서의 구성
 
@@ -17,7 +17,7 @@
 ### PolyON용 이미지 빌드
 
 ```bash
-docker build -t polyon-n8n:latest .
+docker build -t polyon-auto:latest .
 ```
 
 PolyON Operator가 이 저장소의 `module.yaml`과 위 이미지를 사용해 배포합니다.

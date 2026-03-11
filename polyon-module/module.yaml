@@ -2,8 +2,8 @@ apiVersion: polyon.io/v1
 kind: Module
 
 metadata:
-  id: n8n
-  name: PolyON n8n
+  id: auto
+  name: PolyON Auto
   version: "0.1.0"
   category: integration
   description: "워크플로우 자동화 엔진 (n8n) — PolyON AD/Keycloak 기반 SSO + PRC 기반 리소스 사용"
@@ -12,22 +12,22 @@ metadata:
   license: Sustainable Use License
 
 spec:
-  engine: n8n
+  engine: auto
 
   # PRC Claims (DB, S3, SMTP, Auth)
   claims:
     - type: database
       config:
-        name: n8n
+        name: auto
     - type: objectStorage
       config:
-        bucket: n8n
+        bucket: auto
     - type: smtp
       config:
-        domain: n8n
+        domain: auto
     - type: auth
       config:
-        clientId: n8n
+        clientId: auto
 
   # n8n 컨테이너 리소스
   resources:
@@ -74,7 +74,7 @@ spec:
     N8N_SMTP_PORT: "{{ claims.smtp.port }}"
     N8N_SMTP_USER: "{{ claims.smtp.user }}"
     N8N_SMTP_PASSWORD: "{{ claims.smtp.password }}"
-    N8N_SMTP_SENDER: "n8n@{{ baseDomain }}"
+    N8N_SMTP_SENDER: "auto@{{ baseDomain }}"
 
     # OIDC SSO (Keycloak, AD 기반)
     N8N_SSO_JUST_IN_TIME_PROVISIONING: "true"
@@ -90,5 +90,5 @@ spec:
 
   # Ingress
   ingress:
-    subdomain: n8n
+    subdomain: auto
     port: 5678

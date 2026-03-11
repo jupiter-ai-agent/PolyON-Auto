@@ -1,6 +1,6 @@
-# PolyON n8n — AD / OIDC Claim 매핑
+# PolyON Auto — AD / OIDC Claim 매핑
 
-PolyON 계정 원천은 AD DC이며, n8n은 Keycloak OIDC SSO로 로그인한다.  
+PolyON 계정 원천은 AD DC이며, Auto(n8n)는 Keycloak OIDC SSO로 로그인한다.  
 이 문서는 **LDAP(AD) 속성 → OIDC claim → n8n User 필드** 매핑을 정리한다.
 
 ## LDAP(AD) 속성

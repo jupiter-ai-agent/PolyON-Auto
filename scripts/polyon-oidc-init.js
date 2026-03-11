@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * PolyON-n8n OIDC 설정 DB 주입
+ * PolyON-Auto OIDC 설정 DB 주입
  * N8N_OIDC_* env를 읽어 n8n Settings 테이블에 features.oidc 로 저장한다.
  * n8n Cipher와 동일한 AES-256-CBC 암호화로 clientSecret을 저장한다.
  */
@@ -55,7 +55,7 @@ async function main() {
   const client = new Client({
     host: process.env.DB_POSTGRESDB_HOST || 'localhost',
     port: parseInt(process.env.DB_POSTGRESDB_PORT || '5432', 10),
-    database: process.env.DB_POSTGRESDB_DATABASE || 'n8n',
+    database: process.env.DB_POSTGRESDB_DATABASE || 'auto',
     user: process.env.DB_POSTGRESDB_USER || 'postgres',
     password: process.env.DB_POSTGRESDB_PASSWORD || '',
   });

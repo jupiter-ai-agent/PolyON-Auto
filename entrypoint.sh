@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-# PolyON-n8n 엔트리포인트
+# PolyON-Auto 엔트리포인트
 # - PRC/ENV 기반으로 n8n 설정을 초기화
 # - DB 준비를 대기
 # - OIDC 설정이 주어졌으면 Settings에 반영 (초기 버전: env 기반, 추후 API/DB 연동 확장 가능)
@@ -41,6 +41,6 @@ if [ -f /data/scripts/polyon-oidc-init.js ]; then
   node /data/scripts/polyon-oidc-init.js || true
 fi
 
-echo "n8n을 기동합니다..."
+echo "Auto(n8n)를 기동합니다..."
 exec n8n
 

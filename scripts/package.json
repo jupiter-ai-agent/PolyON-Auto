@@ -1,7 +1,7 @@
 {
-  "name": "polyon-n8n-scripts",
+  "name": "polyon-auto-scripts",
   "private": true,
-  "description": "PolyON n8n 초기화 스크립트 (OIDC DB 주입)",
+  "description": "PolyON Auto 초기화 스크립트 (OIDC DB 주입)",
   "dependencies": {
     "pg": "^8.11.3"
   }

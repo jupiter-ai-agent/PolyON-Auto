@@ -1,4 +1,4 @@
-# PolyON-n8n 개발 전 체크리스트
+# PolyON-Auto 개발 전 체크리스트
 
 ## 현재 상태
 
@@ -42,4 +42,4 @@
   2. **S3( RustFS )** 연결 테스트 (objectStorage claim → n8n binary data)  
   3. PolyON Core와의 **AD 사용자 동기화** (선택, 2단계)
 
-위가 끝나면 “PolyON 모듈로서 n8n 개발”은 본격적으로 진행 가능한 상태라고 보면 됨.
+위가 끝나면 “PolyON 모듈로서 Auto(n8n) 개발”은 본격적으로 진행 가능한 상태라고 보면 됨.
